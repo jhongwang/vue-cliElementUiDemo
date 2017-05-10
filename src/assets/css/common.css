@@ -1,0 +1,13 @@
+body,html,ul, li, h1, p, button,input{ 
+  margin:0; 
+  padding:0; 
+}
+html {
+  width: 100%;
+}
+body {
+  width: 100%;
+  color: #111;
+  font-family: 'Microsoft Yahei',Arial,Source Sans Pro, Helvetica, sans-serif;
+  text-align: center;
+}

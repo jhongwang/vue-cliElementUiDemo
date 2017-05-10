@@ -1,10 +1,10 @@
 <template>
-  <div id="app">
+  <div id="nav">
     <el-row class="bg-purple-dark">
       <el-col :span="4"><div class="grid-content"></div></el-col>
       <el-col :span="16">
         <div class="grid-content text-right">
-           <el-menu theme="" :default-active="activeIndex" class="el-menu-demo g-purple-dark" mode="horizontal" @select="handleSelect">
+           <el-menu theme="dark" :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
               <el-menu-item index="1"><router-link to="/appnav1">条件选择1</router-link></el-menu-item>
               <el-submenu index="2">
                 <template slot="title"><router-link to="/appnav2">条件选择2</router-link></template>
@@ -27,7 +27,7 @@
 <script>
 import Vue from 'vue';
 export default {
-  name: 'app',
+  name: 'appNav',
   data () {
     return {
       activeIndex: '1',
@@ -63,31 +63,3 @@ export default {
     background-colobg-purple-darkr: #f9fafc;
   }
 </style>
-
-<!-- <template>
- <div>
-     <app-nav></app-nav>
- </div>
-
-</template>
-
-<script>
-import Vue from 'vue';
-import appNav from './views/appNav.vue';
-
-export default {
-  name: 'app',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
-    }
-  },
-  components:{ //局部组件
-    'app-nav': appNav
-  }
-}
-</script>
-
-<style>
-</style>
- -->
