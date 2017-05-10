@@ -1,25 +1,15 @@
 <template>
-  <div id="nav">
-    <el-row class="bg-purple-dark">
-      <el-col :span="4"><div class="grid-content"></div></el-col>
-      <el-col :span="16">
-        <div class="grid-content text-right">
-           <el-menu theme="dark" :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
-              <el-menu-item index="1">222</el-menu-item>
-              <el-submenu index="2">
-                <template slot="title">222</template>
-                <el-menu-item index="2-1">选项1</el-menu-item>
-                <el-menu-item index="2-2">选项2</el-menu-item>
-                <el-menu-item index="2-3">选项3</el-menu-item>
-              </el-submenu>
-              <el-menu-item index="3"><a href="https://www.ele.me" target="_blank">222</a></el-menu-item>
-            </el-menu>
-        </div>
-      </el-col>
-      <el-col :span="4"><div class="grid-content"></div></el-col>
-    </el-row>
+<div>
 
+  <div class="block">
+    <span class="demonstration">条件选择2的内容</span>
+    <el-carousel trigger="click" height="150px">
+      <el-carousel-item v-for="item in 4" :key="item">
+        <h3>{{ item }}</h3>
+      </el-carousel-item>
+    </el-carousel>
   </div>
+</div>
 </template>
 
 <script>
@@ -28,36 +18,29 @@ export default {
   name: 'appnav2',
   data () {
     return {
-      activeIndex: '1',
-      activeIndex2: '1'
+      item:[1,2,3,4]
     }
   },
   methods: {
-      handleSelect(key, keyPath) {
-        console.log(key, keyPath);
-      }
   }
 }
 </script>
 
 <style>
-  .el-row {
-    margin-bottom: 20px;
-    &:last-child {
-      margin-bottom: 0;
-    }
+  .el-carousel__item h3 {
+    color: #475669;
+    font-size: 14px;
+    opacity: 0.75;
+    line-height: 150px;
+    margin: 0;
   }
-  .bg-purple-dark {
-    background: #99a9bf;
+
+  .el-carousel__item:nth-child(2n) {
+     background-color: #99a9bf;
   }
-  .grid-content {
-    min-height: 70px;
-    line-height: 70px;
+  
+  .el-carousel__item:nth-child(2n+1) {
+     background-color: #d3dce6;
   }
-  .text-right{
-    text-align: right;
-  }
-  .row-bg {
-    background-colobg-purple-darkr: #f9fafc;
-  }
+
 </style>

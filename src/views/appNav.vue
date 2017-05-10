@@ -1,10 +1,10 @@
 <template>
-  <div id="nav">
+  <div id="app">
     <el-row class="bg-purple-dark">
       <el-col :span="4"><div class="grid-content"></div></el-col>
       <el-col :span="16">
         <div class="grid-content text-right">
-           <el-menu theme="dark" :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+           <el-menu  :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
               <el-menu-item index="1"><router-link to="/appnav1">条件选择1</router-link></el-menu-item>
               <el-submenu index="2">
                 <template slot="title"><router-link to="/appnav2">条件选择2</router-link></template>
@@ -27,7 +27,7 @@
 <script>
 import Vue from 'vue';
 export default {
-  name: 'appNav',
+  name: 'appnav',
   data () {
     return {
       activeIndex: '1',
@@ -61,5 +61,12 @@ export default {
   }
   .row-bg {
     background-colobg-purple-darkr: #f9fafc;
+  }
+  .el-menu{
+    background-color: none;
+  }
+
+  .main{
+    padding: 40px 0;
   }
 </style>
